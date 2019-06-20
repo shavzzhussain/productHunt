@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if error %}
+        <h6 style="color: red">{{ error }}</h6>
+    {% endif %}
+
+    <div CLASS="select2-container">
+
+
+        <h1>Login</h1>
+        <form method="post" action="{% url 'login' %}">{% csrf_token %}
+            Username:
+            <br>
+            <input type="text" name="username"  id="username">
+            <br>
+            Enter password:
+            <br>
+            <input type="password" id="pw1" name="password" >
+            <br>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if error %}
+        {{ error }}
+    {% endif %}
+
+    <div CLASS="select2-container">
+
+
+        <h1>Sign Up here!!</h1>
+        <form method="post" action="{% url 'signup' %}">{% csrf_token %}
+            Username:
+            <br>
+            <input type="text" name="username"  id="username1">
+            <br>
+            Enter password:
+            <br>
+            <input type="password" id="pw1" name="password1" >
+            <br>
+            Enter password again:
+            <br>
+            <input type="password" name="password2" id="pw2" >
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary">Signup</button>
+        </form>
+    </div>
+{% endblock %}

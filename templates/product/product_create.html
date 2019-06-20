@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if error %}
+       <h6 style="color: red">{{ error }}</h6>
+    {% endif %}
+
+    <div CLASS="select2-container">
+
+
+        <h1>Sign Up here!!</h1>
+        <form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">{% csrf_token %}
+            Title:
+            <br>
+            <input type="text" name="title"  id="title">
+            <br>
+            Body:
+            <br>
+            <input type="textarea" id="body" name="body" >
+            <br>
+            URL:
+            <br>
+            <input type="text" name="url" id="" >
+            <br>
+            Icon:
+            <br>
+            <input type="file" name="icon" id="" >
+            <br>
+            image:
+            <br>
+            <input type="file" name="image" id="" >
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary">Add Product</button>
+        </form>
+    </div>
+{% endblock %}
